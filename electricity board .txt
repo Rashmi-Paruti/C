@@ -1,0 +1,41 @@
+#include<stdio.h>
+
+main()
+{  
+   int cust_no, unit_con;
+   float charge,surcharge=0, amt, total_amt;
+   char nm[30];
+   
+   printf("Enter your customer ID num:\t");
+   scanf("%d",&cust_no);
+   printf("Enter your customer Name:\t");
+   scanf("%s",&nm);
+   printf("Enter the unit consumed by customer:\t");
+   scanf("%d",&unit_con);
+   if (unit_con <200 )
+   {
+      charge = 0.80;
+   }
+   else if (unit_con>=200 && unit_con<300)
+    {
+        charge = 0.90;
+    }
+   else
+   {
+      charge = 1.00;
+   amt = unit_con*charge;
+   }
+   if (amt>400)
+ {
+     surcharge = amt*15/100.0;
+   total_amt = amt+surcharge;
+   
+   printf("Electricity Bill\n\n");
+   printf("\n Customer ID Num                     :\t%d",cust_no);
+   printf("\n Customer Name                       :\t%s",nm);
+   printf("\n Unit Consumed                       :\t%d",unit_con);
+   printf("\n Amount Charges @Rs.%0.2f  per unit   :\t%f",charge,amt);
+   printf("\n Surchage Amount                     :\t%f",surcharge);
+   printf("\n Minimum meter charge Rs             :\t%d",100);
+   printf("\n Net Amount Paid By the Customer     :\t%f",total_amt+100);
+}}
